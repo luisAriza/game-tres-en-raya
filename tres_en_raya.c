@@ -1,11 +1,13 @@
 //Primer juego: Tres en raya
 
 #include <stdio.h>
+#include <time.h>
 
-void loop (char c [3][3]);
-void Intro_Primera (char c [3][3]);
-void tablero (char c [3][3]);
-void Intro_Yo (char c [3][3]);
+void loop (char c[3][3]);
+void Intro_Primera (char c[3][3]);
+void tablero (char c[3][3]);
+void Intro_Yo (char c[3][3]);
+void Intro_IA (char c[3][3]);
 
 int main ()
 {
@@ -21,6 +23,8 @@ void loop (char c [3][3])
     Intro_Primera (c);
     tablero (c);
     Intro_Yo (c);
+    tablero (c);
+    Intro_IA (c);
     tablero (c);
 }
 
@@ -65,7 +69,7 @@ void Intro_Yo (char c [3][3])
                 {
                     k = 1;
                     printf ("La casilla esta ocupada! Intentalo con otro numero!!\n\n");
-                }       
+                }
                 break;
             }
             case '2':
@@ -76,7 +80,7 @@ void Intro_Yo (char c [3][3])
                 {
                     k = 1;
                     printf ("La casilla esta ocupada! Intentalo con otro numero!!\n\n");
-                }       
+                }
                 break;
             }
             case '3':
@@ -87,7 +91,7 @@ void Intro_Yo (char c [3][3])
                 {
                     k = 1;
                     printf ("La casilla esta ocupada! Intentalo con otro numero!!\n\n");
-                }       
+                }
                 break;
             }
             case '4':
@@ -98,7 +102,7 @@ void Intro_Yo (char c [3][3])
                 {
                     k = 1;
                     printf ("La casilla esta ocupada! Intentalo con otro numero!!\n\n");
-                }       
+                }
                 break;
             }
             case '5':
@@ -109,7 +113,7 @@ void Intro_Yo (char c [3][3])
                 {
                     k = 1;
                     printf ("La casilla esta ocupada! Intentalo con otro numero!!\n\n");
-                }       
+                }
                 break;
             }
             case '6':
@@ -120,7 +124,7 @@ void Intro_Yo (char c [3][3])
                 {
                     k = 1;
                     printf ("La casilla esta ocupada! Intentalo con otro numero!!\n\n");
-                }       
+                }
                 break;
             }
             case '7':
@@ -131,7 +135,7 @@ void Intro_Yo (char c [3][3])
                 {
                     k = 1;
                     printf ("La casilla esta ocupada! Intentalo con otro numero!!\n\n");
-                }       
+                }
                 break;
             }
             case '8':
@@ -142,7 +146,7 @@ void Intro_Yo (char c [3][3])
                 {
                     k = 1;
                     printf ("La casilla esta ocupada! Intentalo con otro numero!!\n\n");
-                }       
+                }
                 break;
             }
             case '9':
@@ -153,13 +157,33 @@ void Intro_Yo (char c [3][3])
                 {
                     k = 1;
                     printf ("La casilla esta ocupada! Intentalo con otro numero!!\n\n");
-                }       
+                }
                 break;
             }
         }
     } while (k == 1);
     
     c[i][j] = 'X';
+}
+
+void Intro_IA (char c [3][3])
+{
+    int i, j, k;
+    srand (time (NULL) );
+
+    do
+    {
+        i = rand() % 3;
+        j = rand() % 3;
+        k = 0;
+
+        if (c[i][j] =='X' || c[i][j] =='O')
+        {
+            k = 1;
+        }
+    } while (k == 1);
+
+    c[i][j] = 'O';
 }
 
 void tablero (char c [3][3])
