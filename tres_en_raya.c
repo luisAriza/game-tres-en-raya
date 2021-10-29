@@ -42,6 +42,9 @@ void loop (char c [3][3])
 
     } while (i <= 9 && j == 2);
 
+    system ("cls"); //Con esta line de codigo y la de abajo se corrige...
+    tablero (c);   //el error que no muestra la ultima ficha del ganador
+
     if (j == 0)
     {
         printf ("Felicidades, Ganaste!!\n\n");
