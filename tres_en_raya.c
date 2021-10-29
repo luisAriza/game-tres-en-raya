@@ -20,12 +20,25 @@ int main ()
 
 void loop (char c [3][3])
 {
+    int i;
+    i = 0;
+
     Intro_Primera (c);
-    tablero (c);
-    Intro_Yo (c);
-    tablero (c);
-    Intro_IA (c);
-    tablero (c);
+
+    do
+    {
+        system ("cls");
+        tablero (c);
+
+        if (i % 2 == 0)
+        {
+            Intro_Yo (c);
+        } else {
+            Intro_IA (c);
+        }
+        i++;
+
+    } while (i <= 9);
 }
 
 void Intro_Primera (char c [3][3])
